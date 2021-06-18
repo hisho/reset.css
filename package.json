@@ -1,0 +1,20 @@
+{
+  "name": "@hisho/reset.css",
+  "version": "1.0.0",
+  "description": "",
+  "main": "reset.css",
+  "style": "reset.css",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hisho/reset.css.git"
+  },
+  "keywords": [],
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/hisho/reset.css/issues"
+  },
+  "homepage": "https://github.com/hisho/reset.css#readme"
+}
