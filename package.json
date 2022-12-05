@@ -1,7 +1,6 @@
 {
   "name": "@hisho/reset.css",
-  "version": "1.0.1",
-  "description": "",
+  "version": "1.0.2",
   "main": "reset.css",
   "style": "reset.css",
   "scripts": {
