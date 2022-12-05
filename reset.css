@@ -1,133 +1,96 @@
-/*! reset.css v2.0.2 | MIT License | https://github.com/hisho/reset.css/ */
-
-* {
-  padding: 0;
-  margin: 0;
-  font-family: inherit;
-  font-size: inherit;
-  font-weight: inherit;
-  letter-spacing: inherit;
-  overflow-wrap: inherit;
-  border: none;
-}
-
 *,
-::after,
-::before {
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
   box-sizing: border-box;
 }
 
-html {
-  overflow-x: hidden;
+:where(html) {
+  -webkit-text-size-adjust: none;
+}
+
+:where(body) {
+  block-size: 100%;
+  block-size: 100svh;
   line-height: 1;
-  letter-spacing: 0;
-  overflow-wrap: break-word;
-  font-feature-settings: 'palt';
-  -webkit-text-size-adjust: 100%;
+  font-family: system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
 }
 
-body {
-  text-align: left;
-  text-rendering: optimizeSpeed;
-}
-
-a {
-  display: block;
+:where(input, button, textarea, optgroup, select) {
   color: inherit;
-  text-decoration: none;
+  font-size: 16px;
+  border: none;
 }
 
-a object {
+:where(button, select) {
+  text-transform: none;
+}
+
+:where(button) {
+  background-color: transparent;
+}
+
+:where(:focus-visible) {
+  outline: 2px solid var(--focus-color, Highlight);
+  outline-offset: -1px;
+}
+
+:where(textarea) {
+  resize: vertical;
+  resize: block;
+}
+
+:where(button, label, select, summary, [role='button'], [role='option']) {
+  cursor: pointer;
+}
+
+:where(:disabled) {
+  cursor: not-allowed;
+}
+
+:where([hidden]) {
+  display: none !important;
+}
+
+:where(a object) {
   pointer-events: none;
 }
 
-img {
-  width: 100%;
-}
-
-svg {
-  overflow: hidden;
-}
-
-img, svg, video, canvas {
-  height: auto;
-}
-
-img, svg, video, canvas, audio, iframe, embed, object {
-  display: block;
-}
-
-ul, ol {
+:where(ul, ol) {
   list-style: none;
 }
 
-table {
+:where(table) {
   border-spacing: 0;
   border-collapse: collapse;
 }
 
-address, em {
-  font-style: normal;
-}
-
-button,
-input,
-optgroup,
-select,
-textarea {
-  font-size: 16px;
-}
-
-input {
-  border-radius: 0;
-}
-
-button {
-  cursor: pointer;
-}
-
-textarea {
-  resize: vertical;
-}
-
-button,
-select {
-  text-transform: none;
-}
-
-button,
-select,
-textarea {
-  background-color: transparent;
-}
-
-button {
-  -webkit-appearance: none;
-  appearance: none;
-}
-
-/* disabledの時はカーソルをデフォルトにする */
-[disabled] {
-  cursor: default;
-}
-
-/* hiddenの時は表示しない */
-[hidden] {
-  display: none !important;
-}
-
-summary {
+:where(img, svg, video, canvas, audio, iframe, embed, object) {
   display: block;
-  list-style: none;
 }
 
-summary::-webkit-details-marker {
-  display:none;
+:where(img, picture, svg) {
+  max-inline-size: 100%;
+  block-size: 100%;
+  object-fit: cover;
 }
 
-/* オートコンプリートの背景色を擬似的に消す */
-input:-webkit-autofill:not(#id) {
-  transition: background-color 5000s ease-in-out 0s !important;
+:where(p, h1, h2, h3, h4, h5, h6) {
+  overflow-wrap: break-word;
+}
+
+:where(
+    .visually-hidden:not(:focus, :active, :focus-within, .not-visually-hidden)
+  ) {
+  clip-path: inset(50%) !important;
+  height: 1px !important;
+  width: 1px !important;
+  overflow: hidden !important;
+  position: absolute !important;
+  white-space: nowrap !important;
+  border: 0 !important;
 }
 
 /* 視覚効果を無効にしてるユーザにはアニメーションさせない */
@@ -141,10 +104,4 @@ input:-webkit-autofill:not(#id) {
     animation-delay: -1ms !important;
     animation-iteration-count: 1 !important;
   }
-}
-
-/* mouseとtouchの時にフォーカスを消す */
-[data-whatinput='mouse'] *:focus,
-[data-whatinput='touch'] *:focus {
-  outline: none;
 }
